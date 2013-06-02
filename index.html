@@ -33,12 +33,124 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<h1>
+<a name="auth" class="anchor" href="#auth"><span class="octicon octicon-link"></span></a>/auth</h1>
+
+<h2>
+<a name="post-auth" class="anchor" href="#post-auth"><span class="octicon octicon-link"></span></a><strong>POST</strong> auth</h2>
+
+<p>Authenticate a user and returns the access_token.</p>
+
+<h3>
+<a name="request-url" class="anchor" href="#request-url"><span class="octicon octicon-link"></span></a>Request URL:</h3>
+
+<pre><code>https://api.simplelogin.co/v1/auth
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h3>
+<a name="sample-response" class="anchor" href="#sample-response"><span class="octicon octicon-link"></span></a>Sample Response</h3>
+
+<pre><code>{
+  "status": "OK",
+  "iterations": 5000,
+  "token": "3243b4g5uy4fg1u3243o5uin23i4u123o4"
+}
+</code></pre>
+
+<hr><h1>
+<a name="users" class="anchor" href="#users"><span class="octicon octicon-link"></span></a>/users</h1>
+
+<p>Is a collection of user data</p>
+
+<h2>
+<a name="get-usersme" class="anchor" href="#get-usersme"><span class="octicon octicon-link"></span></a><strong>GET</strong> users/me</h2>
+
+<p>Return user data.</p>
+
+<h3>
+<a name="request-url-1" class="anchor" href="#request-url-1"><span class="octicon octicon-link"></span></a>Request URL:</h3>
+
+<pre><code>https://api.simplelogin.co/v1/users/me?user_id=[your_user_id]&amp;access_token=[your_access_token]
+</code></pre>
+
+<h3>
+<a name="sample-response-1" class="anchor" href="#sample-response-1"><span class="octicon octicon-link"></span></a>Sample Response</h3>
+
+<pre><code>{
+  "status": "OK",
+  "user": {
+    "id": "51a280f23aa0f2c702000004",
+    "username": "condorito",
+    "first_login": true,
+    "name": {
+      "first_name": "René",
+      "last_name": "Favaloro"
+    },
+    "email": "rene@simplelogin.co",
+    "premium": true,
+    "credential_limits": 6,
+    "ref_code": "R3n3F4v4l0r0",
+    "lang": "es",
+    "gender": "M",
+    "country": "ar",
+    "storage": "dropbox",
+    "billing_date": 123434234
+  }
+}
+</code></pre>
+
+<h2>
+<a name="put-usersme" class="anchor" href="#put-usersme"><span class="octicon octicon-link"></span></a><strong>PUT</strong> users/me</h2>
+
+<p>Update user data.</p>
+
+<h3>
+<a name="request-url-2" class="anchor" href="#request-url-2"><span class="octicon octicon-link"></span></a>Request URL:</h3>
+
+<pre><code>https://api.simplelogin.co/v1/users/me?user_id=[your_user_id]&amp;access_token=[your_access_token]
+</code></pre>
+
+<h3>
+<a name="sample-response-2" class="anchor" href="#sample-response-2"><span class="octicon octicon-link"></span></a>Sample Response</h3>
+
+<pre><code>{
+  "status": "OK",
+  "user": {
+    "id": "51a280f23aa0f2c702000004",
+    "username": "condorito",
+    "name": {
+      "first_name": "René",
+      "last_name": "Favaloro"
+    },
+    "email": "rene@simplelogin.co",
+    "premium": true,
+    "lang": "es",
+    "gender": "M",
+    "country": "ar"
+  }
+}
+</code></pre>
+
+<h2>
+<a name="put-usersmefirst_login" class="anchor" href="#put-usersmefirst_login"><span class="octicon octicon-link"></span></a><strong>PUT</strong> users/me/first_login</h2>
+
+<p>Set first_login flag false.</p>
+
+<h3>
+<a name="request-url-3" class="anchor" href="#request-url-3"><span class="octicon octicon-link"></span></a>Request URL:</h3>
+
+<pre><code>https://api.simplelogin.co/v1/users/me/first_login?user_id=[your_user_id]&amp;access_token=[your_access_token]
+</code></pre>
+
+<h3>
+<a name="sample-response-3" class="anchor" href="#sample-response-3"><span class="octicon octicon-link"></span></a>Sample Response</h3>
+
+<pre><code>{
+  "status": "OK"
+}
+</code></pre>
+
+<hr>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/SimpleLogin">SimpleLogin</a></p>
